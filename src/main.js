@@ -1,4 +1,4 @@
-export function MainDiv(){
+export default function MainDiv(){
   return (
     <div>
       <Header></Header>
