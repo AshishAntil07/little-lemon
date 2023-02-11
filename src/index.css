@@ -1,12 +1,14 @@
 :root{
-  --yellow: yellow;
-  --black: #000;
-  --header-font: 'cascadia code', consolas, monospace, courier;}
+  --yellow: #f4ce14;
+  --green: #495e57;
+  --header-font: 'Markazi Text';
+}
+
+/* Other fonts are #ee9972(nearly peach), #fbdabb(nearly skin), #edefee(nearly lightgray), #333(nearly dimgray) */
 
 body {
   margin: 0;
-  font-family: 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Karla';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -48,13 +50,13 @@ nav ul li a{
   align-items: center;
   flex-flow:column;
   text-decoration: none;
-  color: var(--black);
+  color: var(--green);
 }
 nav ul li a::after{
   content: '';
   height: 2px;
   width: 0;
-  background: var(--black);
+  background: var(--green);
   display: block;
   margin-bottom: -1px;
   border-radius: 1px;
@@ -77,7 +79,7 @@ nav ul li a:hover::after{
   margin: 50px;
 }
 .hero .about p{
-  color: var(--black);
+  color: var(--green);
 }
 .hero .about p .rel::after{
   content: 'beside';
