@@ -1,12 +1,12 @@
 export default function Header(){
   return(
     <nav>
-      <img src='../pictures/logo.png' />
+      <img src='./pictures/navLogo.png' />
       <ul>
         {
-          ['Home','About','Order','Testimonials'].map(str => {
+          ['Home','About','Menu','Reservations', 'Order Online', 'Login'].map((str, index) => {
             return(
-              <li>
+              <li key={index}>
                 <a href={`#${str.toLowerCase()}`}>{str}</a>
               </li>
             )

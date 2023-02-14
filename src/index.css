@@ -1,14 +1,20 @@
 :root{
   --yellow: #f4ce14;
   --green: #495e57;
+  --dark-green: #194e38;
+  --dark2-green: #153f2d;
   --header-font: 'Markazi Text';
+  --secondary1: #ee9972;
+  --secondary2: #fbdabb;
+  --secondary3: #edefee;
+  --secondary4: #333;
 }
 
 /* Other fonts are #ee9972(nearly peach), #fbdabb(nearly skin), #edefee(nearly lightgray), #333(nearly dimgray) */
 
 body {
   margin: 0;
-  font-family: 'Karla';
+  font-family: 'Karla', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -17,13 +23,34 @@ body {
 
 /* Basic main */
 
-header{
+h1,h2{
   font-family: var(--header-font);
-  font-size: 30px;
+  font-size: 45px;
+  color: var(--dark-green);
+  line-height: 0px;
+}
+h2{
+  font-size: 25px;
+  color: initial;
 }
 #root>section{
   min-height: 100vh;
 }
+button{
+  padding: 15px 25px;
+  background: var(--dark-green);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .3s;
+}
+button:hover{
+  background: var(--dark2-green)
+}
+
 
 
 /* Navigation bar */
@@ -34,7 +61,7 @@ nav{
   display: flex;
   justify-content: space-around;
   align-items:center;
-  background: var(--yellow);
+  background: var(--secondary3);
 }
 nav ul{
   display: inherit;
@@ -49,16 +76,16 @@ nav ul li a{
   display: flex;
   align-items: center;
   flex-flow:column;
+  color: black;
   text-decoration: none;
-  color: var(--green);
 }
 nav ul li a::after{
   content: '';
   height: 2px;
   width: 0;
-  background: var(--green);
   display: block;
-  margin-bottom: -1px;
+  background: var(--dark-green);
+  margin-top: 2px;
   border-radius: 1px;
   transition: width .3s;
 }
@@ -75,15 +102,19 @@ nav ul li a:hover::after{
   background: var(--yellow);
 }
 .hero section{
-  width: 50%;
-  margin: 50px;
+  margin: 155px;
+}
+.hero .about{
+  width: 60%;
+  min-width: 200px;
+}
+.hero .heroImage{
+  margin: 100px;
+  width: 30%;
 }
 .hero .about p{
-  color: var(--green);
-}
-.hero .about p .rel::after{
-  content: 'beside';
-  display: inline;
+  color: black;
+  margin-bottom: 50px;
 }
 
 
@@ -93,10 +124,10 @@ nav ul li a:hover::after{
   .hero{
     flex-flow: column nowrap;
   }
-  .hero .about p,.hero .about header{
-    text-align: center;
+  .hero .about{
+    width: 80%;
   }
-  .hero .about p .rel::after{
-    content: 'below';
+  .hero .about p,.hero .about h1,.hero .about h2{
+    text-align: center;
   }
 }
