@@ -1,13 +1,14 @@
-import Header from './Header';
-import Hero from './Hero';
+import HomePage from './routes/Home';
+import BookPage from './routes/Book';
+import {Routes, Route} from 'react-router-dom';
 
 
 function App(){
   return (
-    <>
-      <Header></Header>
-      <Hero></Hero>
-    </>
+    <Routes>
+      <Route path='/' element={<HomePage />} />
+      <Route path='/book' element={<BookPage />} />
+    </Routes>
   );
 }
 
