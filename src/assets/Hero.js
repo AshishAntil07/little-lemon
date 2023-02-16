@@ -12,7 +12,7 @@ export default function Hero(){
         </button>
       </section>
       <section className='heroImage'>
-        <img src='' alt='image' />
+        <img src='./pictures/heroImage.jpg' alt='image' />
       </section>
     </section>
   )
