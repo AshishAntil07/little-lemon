@@ -12,7 +12,7 @@ export default function Form(){
   }
   function submitHandler(e){
     e.preventDefault();
-    const inputs = [...e.target.children].splice(1, 6);
+    const inputs = [...e.target.querySelectorAll('input'), ...e.target.querySelectorAll('select')];
 
     // validation
     
@@ -31,6 +31,7 @@ export default function Form(){
 
     const obj = ['name', 'phone', 'guests', 'date', 'time', 'occassion'].map((query, index) => [query, inputs[index].value==='Select occassion'?'No occassion':inputs[index].value])
     if(API.submitAPI(obj)){
+      localStorage.setItem('LittleLemon', JSON.stringify({book: (localStorage.getItem('LittleLemon')?[...JSON.parse(localStorage.getItem('LittleLemon')).book,obj]:[obj])}))
       const a = document.createElement('a');
       a.setAttribute('href', '/submitted')
       a.click()
