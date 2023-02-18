@@ -252,6 +252,41 @@ nav ul li a:hover::after{
   margin-right: 10px;
 }
 
+/* About */
+
+#about{
+  padding: 75px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  flex-flow: row nowrap;
+}
+#about>section{
+  width: 50%;
+}
+#about>section:first-child{
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+}
+#about>section:last-child{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#about img{
+  height: 300px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 0 10px var(--green);
+}
+#about img:last-child{
+  top: -50px;
+}
+#about img:first-child{
+  left: 50px;
+}
+
 /* Footer */
 
 footer{
@@ -339,6 +374,22 @@ footer .fooLogo img{
     width: 100%;
     justify-content: center;
     flex-flow: row wrap;
+  }
+}
+
+@media screen and (max-width: 900px){
+  #about{
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+  .sideImages{
+    margin-top: 100px;
+  }
+  #about *{
+    text-align: center;
+  }
+  #about header h1{
+    width: 100%;
   }
 }
 
