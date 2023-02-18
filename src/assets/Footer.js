@@ -7,11 +7,11 @@ export default function Footer(){
       <section className='doormat'>
         <b>Doormat Navigation</b>
         <a href='/'>Home</a>
-        <a href='#'>About</a>
-        <a href='#'>Menu</a>
+        <a href='/'>About</a>
+        <a href='/'>Menu</a>
         <a href='/book'>Reservations</a>
-        <a href='#'>Order Online</a>
-        <a href='#'>Login</a>
+        <a href='/'>Order Online</a>
+        <a href='/'>Login</a>
       </section>
       <section className='contact'>
         <b>Contact</b>

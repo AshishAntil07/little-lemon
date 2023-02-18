@@ -2,7 +2,7 @@ export default function Header(){
   return(
     <nav>
       <section className='navLogo'>
-        <img src='./pictures/navLogo.png' />
+        <img src='./pictures/navLogo.png' alt='Little Lemon' />
       </section>
       <ul>
         {
