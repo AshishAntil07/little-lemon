@@ -16,36 +16,50 @@ export default function Form(){
 
     // validation
     
-    if(!inputs[1].value.match(/^(\+\d{2,3}\s)?\(?\d{3}\)?[\s.-]\d{2}[\s.-]\d{3}[\s.-]\d{4}$/)){
-      alert('Enter a valid phone number. That matches the pattern 999 99 999 9999.');
+    if(!inputs[1].value.match(/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/)){
+      alert('Enter a valid phone number, that contains 10 digits, where regional code is optional');
       return
     }
     if(new Date(inputs[3].value) < new Date()){
       alert('Enter a valid date. Past dates are not allowed.');
       return
     }
+    if(inputs[5].value==='Select time'){
+      alert('Please select a time. The field is required.');
+      return
+    }
 
-    const obj = ['name', 'phone', 'guests', 'datetime', 'occassion'].map((query, index) => [query, inputs[index].value==='Occassion (optional)'?'No occassion':inputs[index].value])
+    const obj = ['name', 'phone', 'guests', 'date', 'time', 'occassion'].map((query, index) => [query, inputs[index].value==='Select occassion'?'No occassion':inputs[index].value])
     if(API.submitAPI(obj)){
       const a = document.createElement('a');
       a.setAttribute('href', '/submitted')
       a.click()
     };
   }
+  function focusTarget(e){
+    const id = e.target.getAttribute('for');
+    document.getElementById(id).dispatchEvent(new Event('click'));
+  }
   return(
-    <section className='form'>
+    <section className='form' aria-label='form'>
       <form onSubmit={submitHandler}>
         <header><h1>Reserve a Table</h1></header>
-        <input type='text' placeholder='Name, eg. John Doe' required />
-        <input type='tel' placeholder='Phone no.' required />
-        <input type='number' placeholder='Number of guests' required />
-        <input type='date' onChange={dateChangeHandler} required />
-        <select>
+        <label for="name">Name :</label>
+        <input id='name' type='text' placeholder='Name, eg. John Doe' required aria-required />
+        <label for="phone">Phone No. :</label>
+        <input id='phone' type='tel' placeholder='Phone no.' required aria-required />
+        <label for="guests">Number of Guests :</label>
+        <input id='guests' type='number' placeholder='Number of guests' required aria-required />
+        <label for="date">Date :</label>
+        <input id='date' type='date' onChange={dateChangeHandler} required aria-required />
+        <label for="time" onClick={focusTarget} title='First select date to show up time.'>Time :</label>
+        <select id='time' required aria-required title='First select date to show up time.'>
           <option>Select time</option>
           {times}
         </select>
-        <select>
-          <option>Occassion (optional)</option>
+        <label for="occassion" onClick={focusTarget}>Occassion (optional) :</label>
+        <select id='occassion'>
+          <option>Select occassion</option>
           <option>Anniversary</option>
           <option>Birthday</option>
         </select>
