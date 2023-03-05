@@ -1,9 +1,9 @@
-import Header from '../assets/Header';
-import Hero from '../assets/Hero';
-import Specials from '../assets/Specials';
-import Testimonials from '../assets/Testimonials';
-import About from '../assets/About';
-import Footer from '../assets/Footer';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import Specials from '../components/Specials';
+import Testimonials from '../components/Testimonials';
+import About from '../components/About';
+import Footer from '../components/Footer';
 
 export default function HomePage(){
   return(

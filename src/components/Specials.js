@@ -9,7 +9,7 @@ export default function Specials(){
       </header>
       <section className='cards'>
         <section>
-          <div className='image'></div>
+          <figure className='image'></figure>
           <section className='desc'>
             <p><b>Greek Salad</b>$12.99</p>
             <article>
@@ -19,7 +19,7 @@ export default function Specials(){
           </section>
         </section>
         <section>
-          <div className="image"></div>
+          <figure className="image"></figure>
           <section className='desc'>
             <p><b>Bruschetta</b>$5.90</p>
             <article>
@@ -29,7 +29,7 @@ export default function Specials(){
           </section>
         </section>
         <section>
-          <div className='image'></div>
+          <figure className='image'></figure>
           <section className='desc'>
             <p><b>Lemon Dessert</b>$4.99</p>
             <article>

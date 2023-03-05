@@ -1,4 +1,13 @@
+import { useNavigate } from 'react-router-dom';
+
 export default function Header(){
+  const navigate = useNavigate();
+
+  function redirect(e){
+    e.preventDefault();
+    navigate(e.target.getAttribute('href'), {replace:true})
+  }
+
   return(
     <nav>
       <section className='navLogo'>
@@ -9,7 +18,7 @@ export default function Header(){
           ['Home','About','Menu','Reservations', 'Order Online', 'Login'].map((str, index) => {
             return(
               <li key={index}>
-                <a href={str==='Reservations'?'/book':str==='Home'?'/':`#${str.toLowerCase()}`}>{str}</a>
+                <a href={str==='Reservations'?'/book':str==='Home'?'/':`/`} onClick={redirect}>{str}</a>
               </li>
             )
           })
@@ -18,3 +27,5 @@ export default function Header(){
     </nav>
   )
 }
+
+// #${str.toLowerCase()}

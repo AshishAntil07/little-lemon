@@ -1,8 +1,9 @@
+import { useNavigate } from 'react-router-dom';
+
 export default function Hero(){
+  const navigate = useNavigate();
   function directToBook(){
-    const a = document.createElement('a');
-    a.setAttribute('href', '/book');
-    a.click();
+    navigate('/book')
   }
   return (
     <section className='hero'>

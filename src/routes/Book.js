@@ -1,6 +1,6 @@
-import Header from "../assets/Header";
-import Form from "../assets/Form";
-import Footer from "../assets/Footer";
+import Header from "../components/Header";
+import Form from "../components/Form";
+import Footer from "../components/Footer";
 
 export default function BookPage(){
   return(

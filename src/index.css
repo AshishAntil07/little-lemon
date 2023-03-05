@@ -5,6 +5,7 @@
 :root{
   --yellow: #f4ce14;
   --green: #495e57;
+  --faded-green: #495e57a9;
   --dark-green: #194e38;
   --header-font: 'Markazi Text',serif;
   --secondary1: #ee9972;
@@ -55,8 +56,6 @@ button:hover{
   background: var(--dark-green)
 }
 
-
-
 /* Navigation bar */
 nav{
   position: fixed;
@@ -90,6 +89,7 @@ nav ul li a{
   align-items: center;
   flex-flow: column;
   color: black;
+  cursor: pointer;
   text-decoration: none;
 }
 nav ul li a::after{
@@ -152,6 +152,7 @@ nav ul li a:hover::after{
   min-height: 525px;
 }
 .cards>section{
+  min-width: 300px;
   width: 300px;
   min-height: inherit;
   border-radius: 10px;
@@ -208,9 +209,9 @@ nav ul li a:hover::after{
 /* Testimonials */
 
 #root>section.testimonials{
-  background: var(--secondary2);
+  background: var(--yellow);
   min-height: 0;
-  padding: 150px 75px;
+  padding: 75px;
 }
 .testimonials header{
   display: flex;
@@ -232,6 +233,12 @@ nav ul li a:hover::after{
   background: var(--secondary3);
   padding: 25px;
   border-radius: 10px;
+  box-shadow: 5px 5px 10px var(--faded-green);
+  transition: scale .4s, box-shadow .4s;
+}
+.blocks>section:hover{
+  scale: 1.05;
+  box-shadow: 20px 20px 20px var(--faded-green);
 }
 .blocks>section:first-child{
   margin: 0 10px 0 0;
@@ -242,7 +249,7 @@ nav ul li a:hover::after{
 .blocks>section:last-child{
   margin: 0 0 0 10px;
 }
-.blocks div{
+.blocks .userImg{
   display: flex;
   align-items: center;
   margin-bottom: 7.5px;
@@ -260,6 +267,13 @@ nav ul li a:hover::after{
   justify-content: space-between;
   box-sizing: border-box;
   flex-flow: row nowrap;
+}
+#about header h1{
+  width: 100%;
+  margin-bottom: 50px;
+}
+#about *{
+  text-align: center;
 }
 #about>section{
   width: 50%;
@@ -294,7 +308,6 @@ footer{
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;
-  /* padding: 75px; */
 }
 footer section a, footer section p{
   color: white;
@@ -331,7 +344,6 @@ footer .fooLogo img{
   padding: 30px;
   border-radius: 10px;
   background: var(--secondary3);
-  /* border: 4px solid var(--green); */
   box-shadow: 0 0 10px var(--green);
 }
 .form form input, .form form select{
@@ -375,6 +387,9 @@ footer .fooLogo img{
     justify-content: center;
     flex-flow: row wrap;
   }
+  form{
+    margin-top: 100px;
+  }
 }
 
 @media screen and (max-width: 900px){
@@ -384,9 +399,11 @@ footer .fooLogo img{
   }
   .sideImages{
     margin-top: 100px;
+    flex-flow: column nowrap;
   }
-  #about *{
-    text-align: center;
+  #about img{
+    position: static;
+    margin: 20px;
   }
   #about header h1{
     width: 100%;
